@@ -73,15 +73,15 @@ async def screenshot(message: types.Message):
             browser = await p.chromium.launch(headless=True)
             page = await browser.new_page()
             
-            # Navigate to Render login page
-            await page.goto("https://dashboard.render.com/")
+             # Navigate to Render login page
+            page.goto("https://dashboard.render.com/")
             
             # Perform login
-            await page.fill('input[name="email"]', email)
-            await page.fill('input[name="password"]', password)
+            page.fill('input[name="email"]', email)
+            page.fill('input[name="password"]', password)
             
-            await page.click('button[type="submit"]')
-            await page.wait_for_load_state('networkidle')
+            with page.expect_navigation():
+                page.click('button[type="submit"]')
             
             # Check if login was successful
             if "login" in page.url:
