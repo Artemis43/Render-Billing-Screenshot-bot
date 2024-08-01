@@ -81,7 +81,7 @@ async def screenshot(message: types.Message):
             await page.fill('input[name="password"]', password)
             
             await page.click('button[type="submit"]')
-            await page.wait_for_navigation()
+            await page.wait_for_load_state('networkidle')
             
             # Check if login was successful
             if "login" in page.url:
