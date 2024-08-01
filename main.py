@@ -6,7 +6,7 @@ from aiogram.dispatcher.filters import Text
 from playwright.async_api import async_playwright, Error as PlaywrightError, TimeoutError
 import os
 from keep_alive import keep_alive
-import subprocess
+#import subprocess
 
 # Ensure Playwright dependencies are installed
 #subprocess.run(["python", "install_playwright.py"], check=True)
