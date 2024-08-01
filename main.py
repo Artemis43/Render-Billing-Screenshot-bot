@@ -6,10 +6,10 @@ from aiogram.dispatcher.filters import Text
 from playwright.async_api import async_playwright, Error as PlaywrightError, TimeoutError
 import os
 from keep_alive import keep_alive
-#import subprocess
+# import subprocess
 
 # Ensure Playwright dependencies are installed
-#subprocess.run(["python", "install_playwright.py"], check=True)
+# subprocess.run(["python", "install_playwright.py"], check=True)
 
 keep_alive()
 
@@ -125,5 +125,5 @@ if __name__ == '__main__':
         on_shutdown=on_shutdown,
         skip_updates=True,
         host="0.0.0.0",
-        port=int(os.environ.get('PORT', 8443)),
+        port=int(os.environ.get('port', 8443)),
     )
