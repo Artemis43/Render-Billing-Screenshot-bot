@@ -45,8 +45,12 @@ async def on_shutdown(dispatcher):
 @dp.message_handler(commands=['start'])
 async def start(message: types.Message):
     await message.answer(
-        'Send\n/screenshot1\n/screenshot2\n/screenshot3\n/screenshot4\n/screenshot5\n'
-        'to get the Render billing dashboard screenshot.'
+        'I am The Render billing dashboard screenshot bot\n\n'
+        '/screenshot1 - fgbot1\n'
+        '/screenshot2 - loader1\n'
+        '/screenshot3 - ssbot\n'
+        '/screenshot4 - fgbot2\n'
+        '/screenshot5 - loader2\n'
     )
 
 # Handler for screenshot commands (/screenshot1, /screenshot2, ...)
