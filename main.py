@@ -9,7 +9,7 @@ from keep_alive import keep_alive
 import subprocess
 
 # Ensure Playwright dependencies are installed
-subprocess.run(["python", "install_playwright.py"], check=True)
+#subprocess.run(["python", "install_playwright.py"], check=True)
 
 keep_alive()
 
