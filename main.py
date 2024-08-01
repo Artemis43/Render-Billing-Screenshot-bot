@@ -6,6 +6,10 @@ from aiogram.dispatcher.filters import Text
 from playwright.async_api import async_playwright, Error as PlaywrightError, TimeoutError
 import os
 from keep_alive import keep_alive
+import subprocess
+
+# Ensure Playwright dependencies are installed
+subprocess.run(["python", "install_playwright.py"], check=True)
 
 keep_alive()
 
@@ -114,15 +118,12 @@ async def screenshot(message: types.Message):
             os.remove(screenshot_path)
 
 if __name__ == '__main__':
-    if not os.path.exists('playwright.config'):
-        os.system('playwright install')
-    
     executor.start_webhook(
         dispatcher=dp,
         webhook_path=WEBHOOK_PATH,
         on_startup=on_startup,
         on_shutdown=on_shutdown,
         skip_updates=True,
-        #host="0.0.0.0",
-        #port=int(os.environ.get('PORT', 8443)),
+        host="0.0.0.0",
+        port=int(os.environ.get('PORT', 8443)),
     )
