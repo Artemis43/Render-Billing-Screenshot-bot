@@ -18,6 +18,8 @@ EMAILS = [
     {'email': os.environ.get('e3'), 'password': os.environ.get('p3')},
     {'email': os.environ.get('e4'), 'password': os.environ.get('p4')},
     {'email': os.environ.get('e5'), 'password': os.environ.get('p5')},
+    {'email': os.environ.get('e6'), 'password': os.environ.get('p6')},
+    {'email': os.environ.get('e7'), 'password': os.environ.get('p7')},
 ]
 
 def start(update: Update, context: CallbackContext) -> None:
@@ -28,6 +30,8 @@ def start(update: Update, context: CallbackContext) -> None:
         '/screenshot3 - ssbot\n'
         '/screenshot4 - fgbot2\n'
         '/screenshot5 - loader2\n'
+        '/scrrenshot6 - medbot\n'
+        '/screenshot7 - supportbot\n'
         )
 
 def screenshot(update: Update, context: CallbackContext, index: int) -> None:
@@ -88,7 +92,7 @@ def main() -> None:
 
     updater.dispatcher.add_handler(CommandHandler("start", start))
     
-    for i in range(1, 6):
+    for i in range(1, 8):
         updater.dispatcher.add_handler(CommandHandler(f"screenshot{i}", lambda update, context, i=i: screenshot(update, context, i)))
     
     updater.start_polling()
